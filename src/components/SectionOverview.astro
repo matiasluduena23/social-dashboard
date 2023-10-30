@@ -1,0 +1,38 @@
+---
+import CardOverview from './CardOverview.astro';
+import datas from '../content/overview/data.json';
+---
+
+<section>
+    <div class="container">
+        <h2>Overview - Today</h2>
+        <div class="grid">
+            {datas.map((data) => <CardOverview data={data} />)}
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-clr);
+        padding: 1rem 0 3rem 0;
+    }
+
+    h2 {
+        color: var(--white);
+        margin-block: 1.5rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1rem;
+    }
+
+    @media (min-width: 1270px) {
+        section {
+            transform: translateY(-7rem);
+            padding-bottom: 0;
+        }
+    }
+</style>

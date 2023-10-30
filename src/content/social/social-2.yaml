@@ -2,5 +2,6 @@ user: nathanf
 total: '1044'
 days: 99
 description: followers
-image: './icon-twitter.svg'
+image: '/images/icon-twitter.svg'
 arrow: true
+borderColor: hsl(203, 89%, 53%)

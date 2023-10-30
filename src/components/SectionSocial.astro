@@ -1,0 +1,36 @@
+---
+import CardSocial from './CardSocial.astro';
+import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
+const socials = await getCollection('social');
+---
+
+<section>
+    <Header />
+    <div class="container">
+        <div class="social">
+            {socials.map((social) => <CardSocial social={social} />)}
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        background-color: var(--bg-clr);
+        color: var(--white);
+    }
+
+    .social {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1rem;
+        z-index: 10;
+        position: relative;
+    }
+
+    @media (min-width: 1270px) {
+        .social {
+            transform: translateY(-4rem);
+        }
+    }
+</style>

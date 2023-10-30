@@ -1,0 +1,118 @@
+---
+
+---
+
+<header>
+    <div class="container">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+        <hr />
+        <div class="flex toggle-container">
+            <p>Dark Mode</p>
+            <div class="toggle">
+                <input type="checkbox" name="check" id="check" class="toggle" />
+                <label for="check"></label>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        background-color: var(--top-bg-clr);
+        padding: 2rem 0 6rem 0;
+        margin-bottom: -3rem;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        z-index: 1;
+        position: relative;
+    }
+
+    header > div {
+        position: relative;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 3rem);
+        margin-bottom: 0.3rem;
+    }
+
+    p {
+        font-weight: 700;
+        color: var(--text);
+    }
+
+    hr {
+        margin-block: 1rem;
+        border: 0;
+        border-bottom: 1px solid var(--text);
+        opacity: 0.3;
+    }
+
+    input[type='checkbox'].toggle {
+        opacity: 0;
+        position: absolute;
+        top: -9000px;
+        left: -9000px;
+    }
+
+    label[for='check'] {
+        display: block;
+        width: 40px;
+        height: 20px;
+        border-radius: 20px;
+        background: linear-gradient(
+            to right,
+            hsl(210, 78%, 56%) 5%,
+            hsl(146, 68%, 55%)
+        );
+        position: relative;
+        cursor: pointer;
+    }
+
+    label[for='check']::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2px;
+        margin-block: auto;
+        width: 16px;
+        height: 16px;
+        background-color: var(--bg-clr);
+        border-radius: 50%;
+    }
+
+    input[type='checkbox']:checked + label {
+        background: var(--text);
+    }
+
+    input[type='checkbox']:checked + label::before {
+        left: auto;
+        right: 2px;
+        background-color: white;
+    }
+
+    @media (min-width: 1270px) {
+        header {
+            padding: 5rem 0 10rem 0;
+            margin-bottom: -5rem;
+            transform: translateY(-2rem);
+        }
+
+        hr {
+            display: none;
+        }
+
+        .toggle-container.flex {
+            justify-content: end;
+            gap: 1rem;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 2.3rem;
+            right: 0;
+        }
+    }
+</style>

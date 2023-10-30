@@ -1,0 +1,69 @@
+---
+const { data } = Astro.props;
+const { description, total, percentage, image, arrow } = data;
+
+let colorDayTag = arrow ? 'hsl(163, 72%, 41%)' : 'hsl(356, 69%, 56%)';
+
+import iconUp from '../assets/icon-up.svg';
+import iconDown from '../assets/icon-down.svg';
+---
+
+<article>
+    <header class="flex">
+        <p class="description">{description}</p>
+        <img src={image} alt="icon social" />
+    </header>
+    <footer class="flex">
+        <p class="total">{total}</p>
+        <span class="result">
+            {
+                arrow ? (
+                    <img src={iconUp.src} alt="icon up" />
+                ) : (
+                    <img src={iconDown.src} alt="icon down" />
+                )
+            }
+
+            <span class="percentage">{percentage}</span>
+        </span>
+    </footer>
+</article>
+
+<style define:vars={{ colorDayTag }}>
+    article {
+        background-color: var(--card-bg-clr);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    footer.flex {
+        align-items: end;
+    }
+
+    .description {
+        color: var(--text);
+        font-weight: 700;
+    }
+
+    .total {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.1;
+        color: var(--white);
+    }
+
+    .result {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .percentage {
+        color: var(--colorDayTag);
+        font-weight: 700;
+    }
+</style>

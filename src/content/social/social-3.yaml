@@ -2,5 +2,6 @@ user: realnathanf
 total: 11k
 days: 1099
 description: followers
-image: './icon-instagram.svg'
+image: '/images/icon-instagram.svg'
 arrow: true
+borderColor: hsl(329, 70%, 58%)

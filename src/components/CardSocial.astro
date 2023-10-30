@@ -1,13 +1,23 @@
 ---
 import { Image } from 'astro:assets';
 const { social } = Astro.props;
-const { user, total, days, description, image, arrow } = social.data;
+const { user, total, days, description, image, arrow, borderColor } =
+    social.data;
+
+let colorDaytag = 'white';
+if (arrow && days > 50) {
+    colorDaytag = 'hsl(163, 72%, 41%)';
+} else if (!arrow && days > 50) {
+    colorDaytag = 'hsl(356, 69%, 56%)';
+}
+
 import iconUp from '../assets/icon-up.svg';
+import iconDown from '../assets/icon-down.svg';
 ---
 
-<article>
+<article class="social-card">
     <header>
-        <img src={image.src} alt="icon " />
+        <img src={image} alt="icon " />
         <p class="user">{user}</p>
     </header>
     <div class="card-body">
@@ -15,22 +25,30 @@ import iconUp from '../assets/icon-up.svg';
         <p class="description">{description}</p>
     </div>
     <footer>
-        <Image src={iconUp} alt="icon " />
-        <span><span>{days}</span> Today</span>
+        {
+            arrow ? (
+                <Image src={iconUp} alt="icon " />
+            ) : (
+                <Image src={iconDown} alt="icon " />
+            )
+        }
+
+        <span class="days"><span>{days}</span> Today</span>
     </footer>
 </article>
 
-<style>
+<style define:vars={{ borderColor, colorDaytag }}>
     article {
-        background-color: var(--dark-desaturated-blue);
+        background-color: var(--card-bg-clr);
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+
         gap: 1.8rem;
         border-radius: 5px;
-        border-top: 4px solid var(--facebook);
+        border-top: 4px solid var(--borderColor);
     }
 
     header,
@@ -41,7 +59,7 @@ import iconUp from '../assets/icon-up.svg';
     }
 
     .user {
-        color: var(--desaturated-blue);
+        color: var(--text);
         font-size: 13px;
     }
 
@@ -52,9 +70,14 @@ import iconUp from '../assets/icon-up.svg';
     }
 
     .description {
-        color: var(--desaturated-blue);
+        color: var(--text);
         text-transform: uppercase;
         letter-spacing: 3px;
         opacity: 0.7;
+    }
+
+    .days {
+        color: var(--colorDaytag);
+        font-weight: 700;
     }
 </style>

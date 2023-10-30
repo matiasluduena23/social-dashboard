@@ -11,7 +11,8 @@ const social = defineCollection({
     days: z.number(),
     description: z.string(),
     image: z.string(),
-    arrow: z.boolean()
+    arrow: z.boolean(),
+    borderColor: z.string(),
   }),
 });
 

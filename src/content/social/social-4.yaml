@@ -2,5 +2,6 @@ user: Nathan F.
 total: '8239'
 days: 144
 description: Subscribers
-image: './icon-instagram.svg'
+image: '/images/icon-youtube.svg'
 arrow: false
+borderColor: hsl(348, 97%, 39%)

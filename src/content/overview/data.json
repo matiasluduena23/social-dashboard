@@ -1,0 +1,57 @@
+[
+   { "description": "Page Views",
+     "total": "87",
+    "percentage": "3%",
+    "image": "/images/icon-facebook.svg",
+    "arrow": true
+    },
+
+    { "description": "Likes",
+        "total": "52",
+        "percentage": "2%",
+        "image": "/images/icon-facebook.svg",
+        "arrow": false
+   },
+
+   { "description": "Likes",
+     "total": "5462",
+     "percentage": "2257%",
+     "image": "/images/icon-instagram.svg",
+     "arrow": true
+   },
+
+  { "description": "Profile Views",
+    "total": "52k",
+    "percentage": "1375%",
+    "image": "/images/icon-instagram.svg",
+    "arrow": true
+    },
+
+  { "description": "Retweets",
+    "total": "117",
+     "percentage": "303%",
+     "image": "/images/icon-twitter.svg",
+     "arrow": true
+   },
+
+    { "description": "Likes",
+    "total": "507",
+    "percentage": "553%",
+    "image": "/images/icon-twitter.svg",
+    "arrow": true
+    },
+
+    { "description": "Likes",
+    "total": "107",
+    "percentage": "19%",
+    "image": "/images/icon-youtube.svg",
+    "arrow": false
+    },
+
+    { "description": "Total Views",
+    "total": "1407",
+    "percentage": "12%",
+    "image": "/images/icon-youtube.svg",
+    "arrow": false
+    }   
+]

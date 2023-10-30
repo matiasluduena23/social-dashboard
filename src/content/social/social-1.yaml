@@ -2,5 +2,6 @@ user: nathanf
 total: '1987'
 days: 12
 description: followers
-image: './icon-facebook.svg'
+image: '/images/icon-facebook.svg'
 arrow: true
+borderColor: hsl(208, 92%, 53%)
